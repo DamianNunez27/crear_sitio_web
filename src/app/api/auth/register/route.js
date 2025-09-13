@@ -1,4 +1,4 @@
-// ejemplo en register/route.js
+
 import { NextResponse } from "next/server";
 import bcrypt from "bcrypt";
 import clientPromise from "@/lib/mongodb";
@@ -7,7 +7,7 @@ export async function POST(req) {
   try {
     const { name, email, password } = await req.json();
     const client = await clientPromise;
-    const db = client.db("sitio_web");   // 👈 tu base
+    const db = client.db("sitio_web");
     const users = db.collection("users");
 
     const existingUser = await users.findOne({ email });

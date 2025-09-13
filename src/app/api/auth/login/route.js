@@ -12,7 +12,7 @@ export async function POST(req) {
     }
 
     const client = await clientPromise;
-    const db = client.db("sitio_web"); // 👈 Tu base
+    const db = client.db("sitio_web");
     const users = db.collection("users");
 
     const user = await users.findOne({ email });

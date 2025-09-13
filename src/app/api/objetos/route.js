@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import clientPromise from "@/lib/mongodb";
 import jwt from "jsonwebtoken";
 
-// ✅ GET: listar todos los objetos publicados
+
 export async function GET() {
   try {
     const client = await clientPromise;
@@ -16,7 +16,7 @@ export async function GET() {
   }
 }
 
-// ✅ POST: crear un nuevo objeto (solo usuarios logueados)
+
 export async function POST(req) {
   try {
     const authHeader = req.headers.get("authorization");
@@ -38,7 +38,7 @@ export async function POST(req) {
       telefono,
       direccion,
       usuarioId: decoded.id,
-      status: "pendiente", // luego admin puede cambiarlo
+      status: "pendiente",
       creadoEn: new Date(),
     };
 

@@ -25,11 +25,11 @@ export default function Login() {
         return;
       }
 
-      // Guardar token y rol en localStorage
+   
       localStorage.setItem("token", data.token);
       localStorage.setItem("role", data.role);
 
-      // Redirigir según rol
+  
       if (data.role === "admin") {
         router.push("/dashboard/admin");
       } else {

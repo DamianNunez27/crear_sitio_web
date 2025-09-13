@@ -3,7 +3,7 @@ import clientPromise from "@/lib/mongodb";
 import jwt from "jsonwebtoken";
 import { ObjectId } from "mongodb";
 
-// ✅ PATCH: editar o aprobar objeto (solo admin)
+
 export async function PATCH(req, { params }) {
   try {
     const { id } = params;
@@ -32,7 +32,7 @@ export async function PATCH(req, { params }) {
   }
 }
 
-// ✅ DELETE: eliminar objeto (solo admin)
+
 export async function DELETE(req, { params }) {
   const token = req.headers.get("authorization")?.split(" ")[1];
   if (!token)
